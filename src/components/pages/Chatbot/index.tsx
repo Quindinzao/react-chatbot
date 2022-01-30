@@ -25,9 +25,9 @@ const Chatbot: React.FC = () => {
   const [adviceMessage, setAdviceMessage] = useState()
 
   useEffect(() => {
-    axios
-      .get('https://api.adviceslip.com/advice')
-      .then((response) => setAdviceMessage(response.data.slip.advice))
+    fetch('https://api.adviceslip.com/advice')
+      .then((response) => response.json())
+      .then(data => setAdviceMessage(data.slip.advice))
       .catch((err) => {
         console.error('Oops! An error occurred in ', err)
       })

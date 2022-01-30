@@ -1,0 +1,24 @@
+{
+  "skills": [
+    {
+      "id": 1,
+      "title": "Keep Calm",
+      "description": "I was once the guy who despairs if something goes wrong, but today I just grab a coffee and try to fix that problem."
+    },
+    {
+      "id": 2,
+      "title": "Organization",
+      "description": "I wasn't always organized, until I got a totally messy and poorly structured project. That was the last time I didn't value the organization, since then, I value standardization and organization."
+    },
+    {
+      "id": 3,
+      "title": "Communication",
+      "description": "Communication is fundamental to everything, it's no different with codes. Understanding and getting through what should be done is of paramount importance, so asking questions is also important."
+    },
+    {
+      "id": 4,
+      "title": "Code",
+      "description": "My codes are well standardized, componentized and 'readable'. It's really hard to make me give up on a problem when I find one, I love doing something new and seeing it work out so much."
+    }
+  ]
+}
