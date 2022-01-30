@@ -14,11 +14,13 @@ import {
   SidebarContent,
   Container,
   Content,
-  ContentGrid
+  ContentGrid,
+  ContentCard
 } from './styles'
 
 const Skills: React.FC = () => {
-  const [skills, setSkills] = useState({})
+  const [skills, setSkills] = useState([])
+  const [position, setPosition] = useState(0)
 
   useEffect(() => {
     api
@@ -29,8 +31,6 @@ const Skills: React.FC = () => {
       })
   }, [])
 
-  const numbers = [1, 2, 3, 4, 5]
-
   console.log('skills', skills)
 
   return (
@@ -40,14 +40,23 @@ const Skills: React.FC = () => {
       </SidebarContent>
       <Content>
         <ContentGrid>
-          {numbers.map( (number) => <li key = { number.toString() }>{ number }</li>)}
-          <Card
-            width='240px'
-            height='280px'
-            backgroundColor={theme.colors.gray_700}
-            border={`1px solid ${theme.colors.primary}`}
-            borderRadius='36px'
-          />
+          {skills.map((skill, key) =>
+            <Card
+              key={key}
+              width='240px'
+              height='280px'
+              paddingHorizontal='20px'
+              paddingVertical='32px'
+              backgroundColor={theme.colors.gray_700}
+              border={`1px solid ${theme.colors.primary}`}
+              borderRadius='36px'
+            >
+              <ContentCard>
+                <h5>{skill.title}</h5>
+                <p>{skill.description}</p>
+              </ContentCard>
+            </Card>
+          )}
         </ContentGrid>
       </Content>
     </Container>

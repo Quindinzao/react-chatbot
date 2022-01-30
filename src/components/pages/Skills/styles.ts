@@ -36,3 +36,22 @@ export const ContentGrid = styled.div`
   grid-template-columns: auto auto auto;
   grid-gap: 16px;
 `
+
+export const ContentCard = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  h5 {
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 16px;
+    text-align: left;
+  }
+`

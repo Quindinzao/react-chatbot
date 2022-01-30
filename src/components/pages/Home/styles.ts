@@ -30,17 +30,14 @@ export const Content = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  h1 {
+  h2 {
     text-align: center;
-    font-size: 2.5rem;
-    color: ${props => props.theme.colors.primary};
     margin-top: 40px;
   }
 
-  p {
+  h5 {
     text-align: center;
-    margin-top: 24px;
-    font-size: 1.4rem;
+    margin-top: 1.5rem;
     line-height: 32px;
   }
 `

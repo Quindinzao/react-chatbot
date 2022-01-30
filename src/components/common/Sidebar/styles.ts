@@ -36,8 +36,8 @@ export const Content = styled.div`
   width: 12.5rem;
   height: calc(100% - 5rem);
 
-  h1 {
-    margin-bottom: 36px;
+  h5 {
+    margin-bottom: 32px;
 
     font-size: 1.5rem;
     letter-spacing: 2.5px;

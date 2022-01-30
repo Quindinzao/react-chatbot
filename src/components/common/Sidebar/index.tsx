@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         <ReactIcon />
       </ContentImage>
       <Content>
-        <h1>MENU</h1>
+        <h5>MENU</h5>
         <Link
           href='http://localhost:3000/'
           isActive={home}
