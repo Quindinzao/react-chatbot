@@ -32,13 +32,12 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({
   onRequestClose
 }) => {
   const [id, setId] = useState(0)
-  const [answer, setAnswer] = useState(null)
+  const [answer, setAnswer] = useState('')
   const [answerList, setAnswerList] = useState([])
   const handleNextQuestion = () => {
-    if (answer !== null) {
+    if (answer !== '') {
       setAnswerList([...answerList, answer])
-      setAnswer(null)
-      setId(id + 1)
+      setAnswer('')
     }
   }
 
@@ -67,12 +66,13 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({
         {answerList[id] && <Answers answer={answerList[id]} />}
       </Content>
       <ContainerAnswer>
-        {chatbot[id].inputType === 'text' &&
+        {chatbot[id].inputType === 'text' && !answerList[id] &&
           <Input
             placeholder='Answer'
             onChange={event => setAnswer(event.target.value)}
             type='text'
             name='answer'
+            value={answer}
             width='100%'
             height='64px'
             paddingHorizontal='16px'
@@ -98,6 +98,21 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({
               onClick={() => handleNextQuestion()}
             />
           </Input>
+        }
+        {answerList[id] &&
+          <Button
+            title='NEXT'
+            width='160px'
+            height='54px'
+            color={theme.colors.text}
+            colorHover={theme.colors.primary}
+            backgroundColor={theme.colors.gray_700}
+            backgroundColorHover={theme.colors.gray_400}
+            border='none'
+            fontSize='16px'
+            fontWheight={600}
+            onClick={() => setId(id + 1)}
+          />
         }
         {chatbot[id].inputType === 'button' &&
           <>

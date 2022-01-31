@@ -5,6 +5,8 @@ interface ButtonProps {
   width?: string
   height?: string
 
+  isActive?: boolean
+
   paddingVertical?: string
   paddingHorizontal?: string
 
@@ -58,5 +60,17 @@ export const Container = styled.button<ButtonProps>`
   &:hover {
     background-color: ${props => props.backgroundColorHover};
     color: ${props => props.colorHover};
+  }
+
+  @media screen and (max-width: 420px) {
+    background-color: ${(props) => props.isActive
+      ? props.backgroundColorHover
+      : props.backgroundColor
+    };
+    color: ${(props) => props.isActive
+      ? props.colorHover
+      : props.color
+    };
+    cursor: none;
   }
 `

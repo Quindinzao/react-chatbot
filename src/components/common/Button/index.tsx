@@ -13,6 +13,8 @@ interface ButtonProps {
   width?: string
   height?: string
 
+  isActive?: boolean
+
   paddingVertical?: string
   paddingHorizontal?: string
 
@@ -41,6 +43,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   width,
   height,
+  isActive,
   paddingVertical,
   paddingHorizontal,
   marginTop,
@@ -64,6 +67,7 @@ const Button: React.FC<ButtonProps> = ({
     <Container
       width={width}
       height={height}
+      isActive={isActive}
       marginTop={marginTop}
       marginBottom={marginBottom}
       marignLeft={marignLeft}

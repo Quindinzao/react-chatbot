@@ -11,6 +11,7 @@ interface InputProps {
   type?: string
   name?: string
   value?: any
+  disabled?: boolean
 
   width?: string
   height?: string
@@ -40,6 +41,7 @@ const Input: React.FC<InputProps> = ({
   type,
   name,
   value,
+  disabled,
   width,
   height,
   paddingVertical,
@@ -75,6 +77,7 @@ const Input: React.FC<InputProps> = ({
         type={type}
         name={name}
         value={value}
+        disabled={disabled}
         width={width}
         height={height}
         paddingVertical={paddingVertical}

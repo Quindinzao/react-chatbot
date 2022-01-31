@@ -90,6 +90,12 @@ export default createGlobalStyle`
     padding: 3rem;
     position: relative;
     border-radius: 1rem;
+
+    @media screen and (max-width: 420px) {
+      width: calc(100% - 2.5rem);
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
   }
 
   .react-modal-close {

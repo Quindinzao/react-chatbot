@@ -34,6 +34,10 @@ export const Content = styled.div`
   background-color: ${theme.colors.gray_300};
 
   font-size: 18px;
+
+  @media screen and (max-width: 420px) {
+    width: calc(100% - 56px);
+  }
 `
 
 export const ContentImage = styled.div`
@@ -42,4 +46,11 @@ export const ContentImage = styled.div`
 
   border-radius: 72px;
   background-color: ${theme.colors.text};
+
+  @media screen and (max-width: 420px) {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 48px;
+  }
 `
