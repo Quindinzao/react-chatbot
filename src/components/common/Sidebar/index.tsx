@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       <Content>
         <h5>MENU</h5>
         <Link
-          href='http://localhost:3000/'
+          href='/'
           isActive={home}
         >
           HOME

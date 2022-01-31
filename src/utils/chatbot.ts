@@ -5,7 +5,7 @@ export const chatbot = [
   },
   {
     question: 'Do you need some random advice?',
-    inputType: 'text'
+    inputType: 'button'
   },
   {
     inputType: 'terminate'
