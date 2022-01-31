@@ -31,9 +31,7 @@ const Chatbot: React.FC = () => {
       .catch((err) => {
         console.error('Oops! An error occurred in ', err)
       })
-  }, [])
-
-  console.log('adviceMessage: ', adviceMessage)
+  }, [isOpenChatbotModal])
 
   return (
     <Container>

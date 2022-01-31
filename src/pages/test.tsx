@@ -1,45 +1,31 @@
 // External libraries
-import React from 'react'
-
-const chatbot = {
-  1: {
-    question: 'Hello! Whats your name?',
-    inputType: 'text'
-  },
-  2: {
-    question: 'Do you need some random advice?',
-    inputType: 'button'
-  },
-  3: {
-    question: null
-  },
-  4: {
-    question: 'The true sage takes advice from life ☮'
-  }
-}
+import React, { useState } from 'react'
 
 const test: React.FC = () => {
-
-  const user = {
-    name: '',
-    old: 0,
-    status: ''
-  }
-
-  const handleSend = () => {
-    console.log('user: ', user)
-  }
+  // var list = []
+  var item = '<h6 style={{ marginBottom: 16 }}>Hello World!</h6>'
+  // const handleClick = () => {
+  //   list.push(item)
+  // }
 
   return (
-    <div>
-      {/* <input onChange={event => user.name = event.target.value} />
-      <input type='number' onChange={event => user.old = parseInt(event.target.value)} />
-      <input onChange={event => user.status = event.target.value} /> */}
-      <input onChange={event => user.name = event.target.value} />
-      <input type='number' onChange={event => user.old = parseInt(event.target.value)} />
-      <input onChange={event => user.status = event.target.value} />
-      <button type='button' onClick={handleSend}>Enviar</button>
-      <p>{user.name || 'null'}</p>
+    <div
+      style={{
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column'
+      }}
+    >
+      {/* <h6 style={{ marginBottom: 16 }}>
+        Hello World!
+      </h6> */}
+
+      <p>{item}</p>
+
+      <button onClick={() => null}>click me</button>
     </div>
   )
 }

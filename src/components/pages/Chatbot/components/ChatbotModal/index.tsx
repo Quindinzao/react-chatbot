@@ -13,7 +13,7 @@ import { chatbot } from '../../../../../utils/chatbot'
 
 // Styled
 import {
-  ContainerInput,
+  ContainerAnswer,
   ContainerTitle,
   Content,
   Title
@@ -31,20 +31,23 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({
   isOpen,
   onRequestClose
 }) => {
-  const userAnswers = {
-    name: '',
-    randomAdvice: ''
+  const [id, setId] = useState(0)
+  const [answer, setAnswer] = useState(null)
+  const [answerList, setAnswerList] = useState([])
+  const handleNextQuestion = () => {
+    if (answer !== null) {
+      setAnswerList([...answerList, answer])
+      setAnswer(null)
+      setId(id + 1)
+    }
   }
-  const [id, setId] = useState(1.0)
-  const nextQuestion = () => {
-    setId(id + 1)
-    userAnswers.name = 'ola'
-  }
-  const handleAnswerQuestion = () => console.log('userAnswer: ', userAnswers)
 
   useEffect(() => {
-    console.log(userAnswers.name)
-  })
+    if (isOpen === false) {
+      setId(0)
+      setAnswerList([])
+    }
+  }, [isOpen])
 
   return (
     <ReactModal
@@ -57,41 +60,91 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({
         <Title>WELCOME TO CHATBOT!</Title>
       </ContainerTitle>
       <Content>
-        <Questions question={`${chatbot[id].question}`} />
-        <Answers answer={userAnswers.name} />
+        {chatbot[id] === chatbot[2]
+          ? <Questions question={advice} />
+          : <Questions question={`${chatbot[id].question}`} />
+        }
+        {answerList[id] && <Answers answer={answerList[id]} />}
       </Content>
-      <ContainerInput>
-        <Input
-          placeholder='Answer'
-          onChange={event => userAnswers.name = event.target.value}
-          type='text'
-          name='answer'
-          width='100%'
-          height='64px'
-          paddingHorizontal='16px'
-          color={theme.colors.text}
-          backgroundColor={theme.colors.gray_300}
-          border='none'
-          borderRadius='12px'
-          borderBottomLeftRadius='12px'
-          borderTopLeftRadius='12px'
-        >
-          <Button
-            title='send'
-            height='100%'
+      <ContainerAnswer>
+        {chatbot[id].inputType === 'text' &&
+          <Input
+            placeholder='Answer'
+            onChange={event => setAnswer(event.target.value)}
+            type='text'
+            name='answer'
+            width='100%'
+            height='64px'
             paddingHorizontal='16px'
             color={theme.colors.text}
-            colorHover={theme.colors.primary}
             backgroundColor={theme.colors.gray_300}
-            backgroundColorHover={theme.colors.gray_700}
             border='none'
-            borderTopRightRadius='12px'
-            borderBottomRightRadius='12px'
-            fontSize='14px'
-            onClick={() => handleAnswerQuestion()}
+            borderRadius='12px'
+            borderBottomLeftRadius='12px'
+            borderTopLeftRadius='12px'
+          >
+            <Button
+              title='send'
+              height='100%'
+              paddingHorizontal='16px'
+              color={theme.colors.text}
+              colorHover={theme.colors.primary}
+              backgroundColor={theme.colors.gray_300}
+              backgroundColorHover={theme.colors.gray_700}
+              border='none'
+              borderTopRightRadius='12px'
+              borderBottomRightRadius='12px'
+              fontSize='14px'
+              onClick={() => handleNextQuestion()}
+            />
+          </Input>
+        }
+        {chatbot[id].inputType === 'button' &&
+          <>
+            <Button
+              title='YES'
+              width='160px'
+              height='54px'
+              color={theme.colors.text}
+              colorHover={theme.colors.primary}
+              backgroundColor={theme.colors.gray_700}
+              backgroundColorHover={theme.colors.gray_400}
+              border='none'
+              fontSize='16px'
+              fontWheight={600}
+              onClick={() => setId(id + 1)}
+            />
+            <Button
+              title='NO'
+              width='160px'
+              height='54px'
+              color={theme.colors.text}
+              colorHover={theme.colors.primary}
+              backgroundColor={theme.colors.gray_700}
+              backgroundColorHover={theme.colors.gray_400}
+              border='none'
+              fontSize='16px'
+              fontWheight={600}
+              onClick={() => setId(id + 2)}
+            />
+          </>
+        }
+        {chatbot[id].inputType === 'terminate' &&
+          <Button
+            title='CLOSE'
+            width='160px'
+            height='54px'
+            color={theme.colors.text}
+            colorHover={theme.colors.primary}
+            backgroundColor={theme.colors.gray_700}
+            backgroundColorHover={theme.colors.gray_400}
+            border='none'
+            fontSize='16px'
+            fontWheight={600}
+            onClick={() => onRequestClose()}
           />
-        </Input>
-      </ContainerInput>
+        }
+      </ContainerAnswer>
     </ReactModal>
   )
 }

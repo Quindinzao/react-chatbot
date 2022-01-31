@@ -34,12 +34,12 @@ export const Content = styled.div`
   overflow-x: auto;
 `
 
-export const ContainerInput = styled.div`
+export const ContainerAnswer = styled.div`
   width: 100%;
   max-height: 20rem;
   height: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 `
