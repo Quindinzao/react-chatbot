@@ -22,8 +22,9 @@ export const SidebarContent = styled.div`
 
   background-color: transparent;
 
-  @media screen and (max-width: 420px) {
-    display: none;
+  @media screen and (max-width: 768px) {
+    width: fit-content;
+    height: fit-content;
   }
 `
 

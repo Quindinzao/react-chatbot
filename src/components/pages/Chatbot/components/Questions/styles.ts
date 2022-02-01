@@ -23,7 +23,7 @@ export const ContentImage = styled.div`
   border-radius: 72px;
   background-color: ${theme.colors.text};
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     width: 48px;
     height: 48px;
 
@@ -50,7 +50,7 @@ export const Content = styled.div`
 
   font-size: 18px;
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     width: calc(100% - 56px);
   }
 `

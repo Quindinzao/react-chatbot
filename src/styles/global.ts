@@ -91,7 +91,7 @@ export default createGlobalStyle`
     position: relative;
     border-radius: 1rem;
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 768px) {
       width: calc(100% - 2.5rem);
       padding-left: 1.75rem;
       padding-right: 1.75rem;

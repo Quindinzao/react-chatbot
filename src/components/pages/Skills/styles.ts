@@ -20,8 +20,9 @@ export const SidebarContent = styled.div`
   justify-content: flex-start;
   flex-direction: column;
 
-  @media screen and (max-width: 420px) {
-    display: none;
+  @media screen and (max-width: 768px) {
+    width: fit-content;
+    height: fit-content;
   }
 `
 

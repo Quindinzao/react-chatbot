@@ -62,7 +62,7 @@ export const Container = styled.button<ButtonProps>`
     color: ${props => props.colorHover};
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 768px) {
     background-color: ${(props) => props.isActive
       ? props.backgroundColorHover
       : props.backgroundColor

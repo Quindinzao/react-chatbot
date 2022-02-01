@@ -1,11 +1,12 @@
 // External libraries
-import React from 'react'
+import React, { useState } from 'react'
 
 // Assets
 import ReactIcon from '../../../assets/images/reactjs-icon.svg'
 
 // Styled
 import {
+  ButtonMenu,
   Container,
   Content,
   ContentImage,
@@ -23,12 +24,13 @@ const Sidebar: React.FC<SidebarProps> = ({
   chatbot,
   skills
 }) => {
+  const [isActive, setIsActive] = useState(false)
   return (
-    <Container>
-      <ContentImage>
+    <Container isActive={isActive}>
+      <ContentImage isActive={isActive}>
         <ReactIcon />
       </ContentImage>
-      <Content>
+      <Content isActive={isActive}>
         <h5>MENU</h5>
         <Link
           href='/'
@@ -49,6 +51,9 @@ const Sidebar: React.FC<SidebarProps> = ({
           SKILLS
         </Link>
       </Content>
+      <ButtonMenu onClick={() => setIsActive(!isActive)}>
+        &#9776;
+      </ButtonMenu>
     </Container>
   )
 }
