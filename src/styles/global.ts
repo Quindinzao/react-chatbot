@@ -93,8 +93,8 @@ export default createGlobalStyle`
 
     @media screen and (max-width: 768px) {
       width: calc(100% - 2.5rem);
-      padding-left: 1.75rem;
-      padding-right: 1.75rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 
