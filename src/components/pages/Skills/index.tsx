@@ -20,7 +20,6 @@ import {
 
 const Skills: React.FC = () => {
   const [skills, setSkills] = useState([])
-  const [position, setPosition] = useState(0)
 
   useEffect(() => {
     api
@@ -31,8 +30,6 @@ const Skills: React.FC = () => {
       })
   }, [])
 
-  console.log('skills', skills)
-
   return (
     <Container>
       <SidebarContent>
@@ -40,6 +37,27 @@ const Skills: React.FC = () => {
       </SidebarContent>
       <Content>
         <ContentGrid>
+          {skills.length === 0 &&
+            <Card
+              width='240px'
+              height='280px'
+              paddingHorizontal='20px'
+              paddingVertical='32px'
+              backgroundColor={theme.colors.gray_700}
+              border={`1px solid ${theme.colors.primary}`}
+              borderRadius='36px'
+            >
+              <ContentCard>
+                <h5>OOPS!</h5>
+                <p>
+                  The API we are using is a fake API,
+                  that is, it only works on the machine
+                  where you started the API. Learn how
+                  to launch the API in README.md.
+                </p>
+              </ContentCard>
+            </Card>
+          }
           {skills.map((skill, key) =>
             <Card
               key={key}
