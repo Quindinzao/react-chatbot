@@ -18,6 +18,10 @@ export const Container = styled.div`
   left: 0;
 
   background-color: ${theme.colors.gray_700};
+
+  @media screen and (max-width: 420px) {
+    display: none;
+  }
 `
 
 export const ContentImage = styled.div`

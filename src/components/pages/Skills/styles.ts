@@ -19,6 +19,10 @@ export const SidebarContent = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+
+  @media screen and (max-width: 420px) {
+    display: none;
+  }
 `
 
 export const Content = styled.div`

@@ -1,8 +1,11 @@
+// External libraries
 import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
+
+  padding: 5rem;
 
   display: flex;
   justify-content: center;
@@ -18,6 +21,10 @@ export const SidebarContent = styled.div`
   flex-direction: column;
 
   background-color: transparent;
+
+  @media screen and (max-width: 420px) {
+    display: none;
+  }
 `
 
 export const Content = styled.div`
