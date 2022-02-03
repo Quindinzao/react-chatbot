@@ -7,14 +7,12 @@ import Body from '../../components/pages/Chatbot'
 
 const Chatbot: React.FC = () => {
   return (
-    <div>
-      <>
-        <Head>
-          <title>Chatbot</title>
-        </Head>
-        <Body />
-      </>
-    </div>
+    <>
+      <Head>
+        <title>Chatbot</title>
+      </Head>
+      <Body />
+    </>
   )
 }
 

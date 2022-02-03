@@ -7,14 +7,12 @@ import Body from '../../components/pages/Skills'
 
 const Skills: React.FC = () => {
   return (
-    <div>
-      <>
-        <Head>
-          <title>Skills</title>
-        </Head>
-        <Body />
-      </>
-    </div>
+    <>
+      <Head>
+        <title>Skills</title>
+      </Head>
+      <Body />
+    </>
   )
 }
 
